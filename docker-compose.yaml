@@ -2,7 +2,6 @@ version: "3.9"
 services:
   web:
     image: tomee
-    container_name: tomcat_container
     ports:
     - "8080:8080"
     volumes:
