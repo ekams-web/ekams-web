@@ -4,6 +4,9 @@
 body {
   text-align: center; 
 }
+span {
+  color: darkgreen;
+}
 </style>
 </head>
 <body style="background-color:gray">
@@ -11,6 +14,6 @@ body {
 <h1>Welcome to my webpage</h1>
 <h1>Junit-Tests are integrated</h1>
 <h1>Deployed into docker multinode</h1>
-<h1>Development Environment - Success</h1>
+<h1>Development Environment - <span>Success</span></h1>
 </body>
 </html>
