@@ -19,6 +19,11 @@ pipeline {
                 sh "mvn compile"
             }
         }
+        stage("Unit-Test") {
+            steps {
+                sh "mvn test"
+            }
+        }
         stage("Package") {
             steps {
                 sh "mvn package"
@@ -26,6 +31,9 @@ pipeline {
         }
     }
     post {
+        always {
+            junit '**/target/junit-tests/*.xml'
+        }
         always {
             sshPublisher(publishers: [sshPublisherDesc(configName: 'docker_controller', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//home/docadm/docker/war', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
         }

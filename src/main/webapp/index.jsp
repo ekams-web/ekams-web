@@ -7,7 +7,8 @@ body {
 </style>
 </head>
 <body style="background-color:gray">
-<h2>Hello</h2>
-<h2>Welcome to my webpage</h2>
+<h1>Hello</h1>
+<h1>Welcome to my webpage</h1>
+<h1>Junit-Tests are integrated</h1>
 </body>
 </html>
