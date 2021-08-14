@@ -11,7 +11,7 @@ body {
 <h1>Welcome to my webpage</h1>
 <h1>Junit-Tests are integrated</h1>
 <h1>docker-compose implemented</h1>
-<h1>Testing with stack-deploy</h1>
 <h1>Testing with multinode-deploy</h1>
+<h1>Testing with multinode+multicontainer deploy</h1>
 </body>
 </html>
