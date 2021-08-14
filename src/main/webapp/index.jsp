@@ -10,6 +10,7 @@ body {
 <h1>Hello</h1>
 <h1>Welcome to my webpage</h1>
 <h1>Junit-Tests are integrated</h1>
-<h1>Docker multinode deployment</h1>
+<h1>Deployed into docker multinode</h1>
+<h1>Development Environment - Success</h1>
 </body>
 </html>
