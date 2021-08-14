@@ -1,11 +1,11 @@
-pipeline {
+ppipeline {
     agent {
         label 'master'
     }
     stages {
         stage("Git-Clone") {
             steps {
-                git branch: 'dev', git credentialsId: 'github_creds', url: 'git@github.com:ekams-web/ekams-web.git'
+                git branch: 'dev', credentialsId: 'github_creds', url: 'git@github.com:ekams-web/ekams-web.git'
             }
         }
         stage("Clean-PreviousPkgs") {
@@ -13,12 +13,12 @@ pipeline {
                 sh "mvn clean"
             }
         }
-        stage("Code-Compile") {
+        stage("Compile") {
             steps {
                 sh "mvn compile"
             }
         }
-        stage("package") {
+        stage("Package") {
             steps {
                 sh "mvn package"
             }
