@@ -32,9 +32,7 @@ pipeline {
     }
     post {
         success {
-            junit '**/target/junit-tests/*.xml'
-        }
-        always {
+            junit allowEmptyResults: true, testResults: '**/target/junit-tests/*.xml'
             sshPublisher(publishers: [sshPublisherDesc(configName: 'docker_controller', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//home/docadm/docker/war', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
         }
     }
