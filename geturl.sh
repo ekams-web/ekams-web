@@ -13,4 +13,4 @@ snapshotid=$(curl http://15.207.109.98:8081/service/rest/repository/browse/ekams
 
 url=$(echo $baseurl/$repo/$groupid/$artifactid/$snapshotversion/$artifactid-$snapshotid.war)
 
-wget -o  $1/ekams.war $url
+echo admin | sudo -S wget -o  $1/ekams.war $url
