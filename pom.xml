@@ -64,17 +64,15 @@
       </plugins>
     </pluginManagement>
   </build>
-    <!--
     <distributionManagement>
     <repository>
       <id>releases</id>
-      <url>http://34.67.74.164:8081/repository/maven-snapshots/</url>
+      <url>http://35.154.204.128:8081/repository/ekams/</url>
     </repository>
     <snapshotRepository>
       <id>deploy</id>
       <name>Snapshot</name>
-      <url>http://34.67.74.164:8081/repository/maven-snapshots/</url>
+      <url>http://35.154.204.128:8081/repository/ekams/</url>
     </snapshotRepository>
   </distributionManagement>
-  -->
 </project>
