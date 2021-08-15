@@ -19,7 +19,7 @@ pipeline {
                 sh "mvn compile"
             }
         }
-        stage("Unit-Test") {
+        stage("Test") {
             steps {
                 sh "mvn test"
             }
