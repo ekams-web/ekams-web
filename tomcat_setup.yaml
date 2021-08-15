@@ -12,7 +12,7 @@
     TOM_PACKAGE: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz
     TOM_PATH: /home/ec2-user
     TOM_BIN_PATH: /home/ec2-user/apache-tomcat-8.5.69/bin
-    TOM_WEB_PATH: /home/ec2-user/apache-tomcat-8.5.69/webapps
+    TOM_WEB_PATH: /home/ec2-user/apache-tomcat-8.5.69/webapps/
   become_user: true
   tasks:
   - name: Switch to HOME_DIR
