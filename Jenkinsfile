@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Git-Clone") {
             steps {
-                git branch: 'dev', credentialsId: 'github_creds', url: 'git@github.com:ekams-web/ekams-web.git'
+                git branch: 'dev', url: 'https://github.com/ekams-web/ekams-web.git'
             }
         }
         stage("Clean-PreviousPkgs") {
