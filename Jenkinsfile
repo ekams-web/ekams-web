@@ -1,4 +1,4 @@
-// This is Jenkins pipeline syntax
+// Description : Jenkins Build Pipeline
 pipeline {
     agent {
         label 'master'
