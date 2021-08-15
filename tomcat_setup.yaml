@@ -1,0 +1,57 @@
+######################################
+# Creator : Aravind Machha
+# Creation Date : 12-AUG-2021
+# Last Modified Date : 15-AUG-2021
+# Description : This YAML file is to archestrate the Tomcat for Deployment
+######################################
+
+- name: Archestrate the Tomcat
+  hosts: tomcat
+  vars:
+    HOME_DIR: /home/ec2-user
+    TOM_PACKAGE: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz
+    TOM_PATH: /home/ec2-user
+    TOM_BIN_PATH: /home/ec2-user/apache-tomcat-8.5.69/bin
+    TOM_WEB_PATH: /home/ec2-user/apache-tomcat-8.5.69/webapps
+  become_user: true
+  tasks:
+  - name: Switch to HOME_DIR
+    shell:
+      cmd: pwd
+      chdir: "{{ HOME_DIR }}"
+
+  - name: Install Java-Package
+    shell: "sudo yum install java-1.8* -y"
+
+  - name: Install & extract Tomcat_package
+    unarchive:
+      src: "{{ TOM_PACKAGE }}"
+      dest: "{{ TOM_PATH }}"
+      remote_src: yes
+
+  - name: Start TOMCAT
+    shell: "nohup {{ TOM_BIN_PATH }}/startup.sh"
+#      chdir: "{{ TOM_BIN_PATH }}"
+#      cmd: nohup startup.sh
+
+  - name: Delete Previous Directories
+    file:
+      path: "{{ TOM_WEB_PATH }}"
+      state: "{{ item }}"
+    loop:
+      - directory
+      - absent
+
+  - name: Copy WAR file
+    copy:
+      src: /home/ec2-user/ekams/war/target/add.war
+      dest: "{{ TOM_WEB_PATH }}"
+
+  - name: Check Tomcat is running
+    shell: "ps -aux | grep tomcat | grep -v grep"
+    register: tom_running
+#    ignore_errors: true
+
+  - name: Restart the Tomcat
+    shell: "nohup {{ TOM_BIN_PATH }}/shutdown.sh && nohup {{ TOM_BIN_PATH }}/startup.sh"
+    when: tom_running is succeeded
