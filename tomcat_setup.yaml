@@ -44,7 +44,7 @@
 
   - name: Copy WAR file
     copy:
-      src: /home/ec2-user/ekams/war/target/add.war
+      src: /home/ec2-user/war/target/add.war
       dest: "{{ TOM_WEB_PATH }}"
 
   - name: Check Tomcat is running
