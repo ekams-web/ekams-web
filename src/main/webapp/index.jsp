@@ -8,7 +8,7 @@ body {
   color: darkgreen;
 }
 #test {
-  color: yellow;
+  color: darkgreen;
 }
 </style>
 </head>
@@ -18,6 +18,6 @@ body {
 <h1>Junit-Tests are integrated</h1>
 <h1>Deployed into docker singe-node</h1>
 <h1>Development Environment - <span id="dev">Success</span></h1>
-<h1>Testing Evnironment - <span id="test">Progressing...</span></h1>
+<h1>Testing Evnironment - <span id="test">Success</span></h1>
 </body>
 </html>
