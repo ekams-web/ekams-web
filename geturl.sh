@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /opt/docker/compose
-wget https://li.nux.ro/download/nux/dextop/el7/x86_64/html2text-1.3.2a-14.el7.nux.x86_64.rpm
+wget https://li.nux.ro/download/nux/dextop/el7/x86_64/html2text-1.3.2a-14.el7.nux.x86_64.rpm --no-check-certificate
 sudo rpm -Uvh html2text-1.3.2a-14.el7.nux.x86_64.rpm
 
 baseurl=$(echo http://15.207.109.98:8081/repository) ;
