@@ -19,6 +19,6 @@ body {
 <h1>Deployed into docker singe-node</h1>
 <h1>Development Env - <span id="success">Success</span></h1>
 <h1>Testing Env - <span id="success">Success</span></h1>
-<h1>Production Env - <h1 id="progress">Progressing...</h1></h1>
+<h1>Production Env - <h1 id="Success">Success</h1></h1>
 </body>
 </html>
